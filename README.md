@@ -1,17 +1,17 @@
 # Chrome Theme Color Changer #
-**Contributors:** potato4d
-**Tags:** meta,admin
-**Requires at least:** 4.1
-**Tested up to:** 4.4.2
-**Stable tag:** 4.4.2
-**License:** GPLv3
+**Contributors:** potato4d  
+**Tags:** meta,admin  
+**Requires at least:** 4.1  
+**Tested up to:** 4.4.2  
+**Stable tag:** 4.4.2  
+**License:** GPLv3  
 **License URI:** https://github.com/potato4d/chrome-theme-color-changer/blob/master/LICENSE
 
 Address bar color changer for android chrome.
 
 ## Description ##
 
-This plugin change android-chrome address bar color.
+This plugin change android-chrome address bar color.  
 It\'s supported use color picker for select address bar color.
 
 ## Installation ##
