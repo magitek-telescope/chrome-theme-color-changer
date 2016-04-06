@@ -16,7 +16,7 @@ It\'s supported use color picker for select address bar color.
 
 == Installation ==
 
-1. You pick color in WordPress Admin menu.
+1. You pick color in Admin menu.
 2. This plugin will change address bar color you select it.
 3. Complete.
 
