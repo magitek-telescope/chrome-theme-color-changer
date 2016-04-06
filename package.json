@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "main": "Gruntfile.js",
   "author": "Potato4d(Hanatani Takuma)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/potato4d/chrome-theme-color-changer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/potato4d/chrome-theme-color-changer/issues"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.2",
     "grunt": "^0.4.5",
