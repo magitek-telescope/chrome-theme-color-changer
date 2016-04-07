@@ -1,16 +1,16 @@
 # Copyright (C) 2016 Potato4d(Hanatani Takuma)
-# This file is distributed under the same license as the Chrome theme color changer package.
+# This file is distributed under the same license as the Chrome Theme Color Changer package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Chrome theme color changer 0.1\n"
+"Project-Id-Version: Chrome Theme Color Changer 1.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/chrome-theme-color-changer\n"
-"POT-Creation-Date: 2016-04-06 11:17:38+00:00\n"
+"POT-Creation-Date: 2016-04-07 06:26:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Potato4d(Hanatani Takuma) <mail@potato4d.me>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 "X-Poedit-KeywordsList: "
@@ -25,16 +25,24 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: chrome-theme-color-changer.php:49
+#: chrome-theme-color-changer.php:56
 msgid "Settings"
 msgstr ""
 
-#: chrome-theme-color-changer.php:55 chrome-theme-color-changer.php:56
+#: chrome-theme-color-changer.php:62 chrome-theme-color-changer.php:63
 msgid "Theme color"
 msgstr ""
 
+#: res/templates/onerror.php:4
+msgid "Invalid value."
+msgstr ""
+
+#: res/templates/updated.php:4
+msgid "Success updated."
+msgstr ""
+
 #. Plugin Name of the plugin/theme
-msgid "Chrome theme color changer"
+msgid "Chrome Theme Color Changer"
 msgstr ""
 
 #. Description of the plugin/theme

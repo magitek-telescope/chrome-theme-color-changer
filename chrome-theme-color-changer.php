@@ -12,6 +12,9 @@
 
 class Chrome_Theme_Color_Changer{
 
+	private $is_update  = false;
+	private $is_success = false;
+
 	public static function get_instance() {
 		static $instance;
 
@@ -24,11 +27,13 @@ class Chrome_Theme_Color_Changer{
 	public function __construct(){
 		$this->add_actions();
 		$this->add_filters();
+		$this->load_textdomain();
 	}
 
 	private function add_actions(){
-		add_action('admin_init', array($this, 'admin_init'));
-		add_action('wp_head'   , array($this, 'set_theme_color'));
+		add_action('admin_init'   , array($this, 'admin_init'));
+		add_action('wp_head'      , array($this, 'set_theme_color'));
+		add_action('admin_notices', array($this, 'set_notices'));
 	}
 
 	private function add_filters(){
@@ -36,12 +41,19 @@ class Chrome_Theme_Color_Changer{
 		add_filter('admin_menu', array($this, 'add_page'));
 	}
 
+	private function load_textdomain(){
+		load_plugin_textdomain('chrome-theme-color-changer', null, basename(dirname(__FILE__)) . '/languages/');
+	}
+
 	public function admin_init(){
-		if(!(isset($_POST['chrome-theme-color-changer']) && $_POST['chrome-theme-color-changer'])) return;
+		$this->is_update = !!filter_input(INPUT_POST, 'update');
+		if(!filter_input(INPUT_POST, 'chrome-theme-color-changer')) return;
 		if(check_admin_referer('chrome-theme-color-changer-key', 'chrome-theme-color-changer')){
-			update_option('chrome-theme-color-changer-color', isset($_POST['color']) ? $_POST['color'] : '');
-			wp_safe_redirect(menu_page_url('chrome-theme-color-changer', false));
-			exit();
+			$color = filter_input(INPUT_POST, 'color') ?: '';
+			if(preg_match("/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/", "#" . $color) || $color === ''){
+				update_option('chrome-theme-color-changer-color', $color);
+				$this->is_success = true;
+			}
 		}
 	}
 
@@ -60,13 +72,18 @@ class Chrome_Theme_Color_Changer{
 		);
 	}
 
+	public function set_notices(){
+		if($this->is_update){
+			require_once __DIR__ . '/res/templates/' . ($this->is_success ? 'updated' : 'onerror') . '.php';
+		}
+	}
+
 	public function chrome_theme_color_changer_menu(){
 		require_once __DIR__ . '/res/templates/form.php';
 
 		wp_register_script('chrome-theme-color-changer-lib-jscolor', plugins_url('lib/jscolor.min.js', __FILE__), array()        , false, true);
-		wp_register_script('chrome-theme-color-changer-admin-js'   , plugins_url('res/js/main.js', __FILE__), array('jquery'), false, true);
-
-		wp_register_style('chrome-theme-color-changer-admin-css', plugins_url('res/css/style.css', __FILE__));
+		wp_register_script('chrome-theme-color-changer-admin-js'   , plugins_url('res/js/main.js'    , __FILE__), array('jquery'), false, true);
+		wp_register_style ('chrome-theme-color-changer-admin-css'  , plugins_url('res/css/style.css' , __FILE__));
 
 		wp_enqueue_script('chrome-theme-color-changer-lib-jscolor');
 		wp_enqueue_script('chrome-theme-color-changer-admin-js');
@@ -75,7 +92,7 @@ class Chrome_Theme_Color_Changer{
 
 	public function set_theme_color(){
 		$color = get_option('chrome-theme-color-changer-color');
-		if(in_array($color, array('',null), true)) return false;
+		if(in_array($color,array('',null),true)) return false;
 		echo '<meta name="theme-color" content="' . '#' . esc_html($color) . '">' . "\n";
 		return true;
 	}
