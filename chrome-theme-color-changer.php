@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Chrome Theme Color Changer
- * Version: 1.0
+ * Version: 1.1.0
  * Description: Address bar color changer for android chrome.
  * Author: Potato4d(Hanatani Takuma)
  * Author URI: http://potato4d.me/
