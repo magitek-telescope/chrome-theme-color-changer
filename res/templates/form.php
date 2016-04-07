@@ -6,7 +6,7 @@
 
 		<div class="form-select-color">
 			<label for="color-selector">Theme Color: </label>
-			<input id="color-selector" type="text" name="color" value="<?php echo esc_html(get_option('chrome-theme-color-changer-color')); ?>" class="jscolor color-picker">
+			<input id="color-selector" type="text" name="color" value="<?php echo esc_attr(get_option('chrome-theme-color-changer-color')); ?>" class="jscolor color-picker">
 			<div class="color-preview"></div>
 		</div>
 
