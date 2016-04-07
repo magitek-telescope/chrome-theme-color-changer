@@ -27,5 +27,9 @@ It\'s supported use color picker for select address bar color.
 
 == Changelog ==
 
+= 1.1.0 =
+Implementation validate and notice.
+Fix bug.
+
 = 1.0 =
 release.
