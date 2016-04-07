@@ -10,6 +10,8 @@
 			<div class="color-preview"></div>
 		</div>
 
+		<input type="hidden" name="update" value="update">
+
 		<?php submit_button(); ?>
 	</form>
 </div>

@@ -1,15 +1,15 @@
 # Copyright (C) 2016 Potato4d(Hanatani Takuma)
-# This file is distributed under the same license as the Chrome theme color changer package.
+# This file is distributed under the same license as the Chrome Theme Color Changer package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Chrome theme color changer 0.1\n"
+"Project-Id-Version: Chrome Theme Color Changer 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/chrome-theme-"
 "color-changer\n"
-"POT-Creation-Date: 2016-04-06 11:17:38+00:00\n"
+"POT-Creation-Date: 2016-04-07 06:18:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-04-06 20:22+0900\n"
+"PO-Revision-Date: 2016-04-07 15:27+0900\n"
 "Last-Translator: Potato4d(Hanatani Takuma) <mail@potato4d.me>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: Poedit 1.5.7\n"
@@ -23,22 +23,29 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: chrome-theme-color-changer.php:49
+#: chrome-theme-color-changer.php:56
 msgid "Settings"
 msgstr "設定"
 
-#: chrome-theme-color-changer.php:55 chrome-theme-color-changer.php:56
+#: chrome-theme-color-changer.php:62 chrome-theme-color-changer.php:63
 msgid "Theme color"
 msgstr "Theme color"
 
+#: res/templates/onerror.php:4
+msgid "Invalid value."
+msgstr "不正な値です。"
+
+#: res/templates/updated.php:4
+msgid "Success updated."
+msgstr "正常に更新されました。"
+
 #. Plugin Name of the plugin/theme
-msgid "Chrome theme color changer"
-msgstr "Chrome theme color changer"
+msgid "Chrome Theme Color Changer"
+msgstr "Chrome Theme Color Changer"
 
 #. Description of the plugin/theme
 msgid "Address bar color changer for android chrome."
-msgstr ""
-"Android Chromeにてアドレスバーのテーマカラーを変更するためのプラグインです。"
+msgstr "Chromeにてアドレスバーのテーマカラーを変更するためのプラグインです。"
 
 #. Author of the plugin/theme
 msgid "Potato4d(Hanatani Takuma)"
