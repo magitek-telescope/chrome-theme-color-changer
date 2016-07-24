@@ -29,7 +29,7 @@ module.exports = function( grunt ) {
 		makepot: {
 			target: {
 				options: {
-					domainPath: '/languages',
+					domainPath: '/res/languages',
 					mainFile: 'chrome-theme-color-changer.php',
 					potFilename: 'chrome-theme-color-changer.pot',
 					potHeaders: {
