@@ -6,7 +6,7 @@
  * Author: Potato4d(Hanatani Takuma)
  * Author URI: http://potato4d.me/
  * Text Domain: chrome-theme-color-changer
- * Domain Path: /languages
+ * Domain Path: /res/languages
  * @package Chrome-theme-color-changer
  */
 
@@ -83,7 +83,7 @@ class Chrome_Theme_Color_Changer{
 	public function chrome_theme_color_changer_menu() {
 		require_once __DIR__ . '/res/templates/form.php';
 
-		wp_register_script( 'chrome-theme-color-changer-lib-jscolor', plugins_url( 'lib/jscolor.min.js', __FILE__ ), array()          , false, true );
+		wp_register_script( 'chrome-theme-color-changer-lib-jscolor', plugins_url( 'res/lib/jscolor.min.js', __FILE__ ), array()          , false, true );
 		wp_register_script( 'chrome-theme-color-changer-admin-js'   , plugins_url( 'res/js/main.js'    , __FILE__ ), array( 'jquery' ), false, true );
 
 		wp_register_style( 'chrome-theme-color-changer-admin-css'   , plugins_url( 'res/css/style.css' , __FILE__ ) );
