@@ -32,7 +32,7 @@ class Chrome_Theme_Color_Changer{
 
 	private function add_actions() {
 		add_action( 'admin_init'   , array( $this, 'admin_init' ) );
-		add_action( 'wp_head'      , array( $this, 'set_theme_color' ) );
+		add_action( 'wp_head'      , array( $this, 'echo_theme_color' ) );
 		add_action( 'admin_notices', array( $this, 'set_notices' ) );
 	}
 
@@ -42,20 +42,16 @@ class Chrome_Theme_Color_Changer{
 	}
 
 	private function load_textdomain() {
-		load_plugin_textdomain( 'chrome-theme-color-changer', null, basename( dirname( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'chrome-theme-color-changer', null, basename( dirname( __FILE__ ) ) . '/res/languages/' );
 	}
 
 	public function admin_init() {
-		$this->is_update = ! ! filter_input( INPUT_POST, 'update' );
+		$this->is_update = !!filter_input( INPUT_POST, 'update' );
 		if ( ! filter_input( INPUT_POST, 'chrome-theme-color-changer' ) ) {
 			return;
 		}
 		if ( check_admin_referer( 'chrome-theme-color-changer-key', 'chrome-theme-color-changer' ) ) {
-			$color = filter_input( INPUT_POST, 'color' ) ?: '';
-			if ( preg_match( "/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/", '#' . $color ) || $color === '' ) {
-				update_option( 'chrome-theme-color-changer-color', $color );
-				$this->is_success = true;
-			}
+			$this->is_success = $this->save_theme_color( filter_input( INPUT_POST, 'color' ) ?: '' );
 		}
 	}
 
@@ -93,7 +89,16 @@ class Chrome_Theme_Color_Changer{
 		wp_enqueue_style( 'chrome-theme-color-changer-admin-css' );
 	}
 
-	public function set_theme_color() {
+	private function save_theme_color( $color ) {
+		if ( preg_match( "/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/", '#' . $color ) || $color === '' ) {
+			update_option( 'chrome-theme-color-changer-color', $color );
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function echo_theme_color() {
 		$color = get_option( 'chrome-theme-color-changer-color' );
 		if ( in_array( $color, array( '', null ), true ) ) {
 			return false;
