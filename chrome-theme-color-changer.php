@@ -71,8 +71,14 @@ class Chrome_Theme_Color_Changer{
 	}
 
 	public function set_notices() {
-		if ( $this->is_update ) {
-			require_once __DIR__ . '/res/templates/' . ( $this->is_success ? 'updated' : 'onerror' ) . '.php';
+		if ( ! $this->is_update ) {
+			return;
+		}
+
+		if( $this->is_success) {
+			echo '<div class="notice notice-success is-dismissible"><p>' . __('Success updated.', 'chrome-theme-color-changer') . '</p></div>';
+		} else {
+			echo '<div class="error is-dismissible"><p>' . __('Invalid value.', 'chrome-theme-color-changer') . '</p></div>';
 		}
 	}
 
