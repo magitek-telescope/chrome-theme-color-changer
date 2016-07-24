@@ -12,7 +12,7 @@ Address bar color changer for android chrome.
 == Description ==
 
 This plugin change android-chrome address bar color.
-It\'s supported use color picker for select address bar color.
+It's supported use color picker for select address bar color.
 
 == Installation ==
 
@@ -26,6 +26,12 @@ It\'s supported use color picker for select address bar color.
 2. Admin Menu
 
 == Changelog ==
+
+= 1.1.2 =
+Remove unnecessary program files.
+
+= 1.1.1 =
+Remove unnecessary translate files.
 
 = 1.1.0 =
 Implementation validate and notice.
